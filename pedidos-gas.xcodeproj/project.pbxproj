@@ -1,0 +1,605 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B866E0AB29411B530094A1CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B866E0AA29411B530094A1CC /* AppDelegate.swift */; };
+		B866E0AD29411B530094A1CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B866E0AC29411B530094A1CC /* SceneDelegate.swift */; };
+		B866E0AF29411B530094A1CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B866E0AE29411B530094A1CC /* ViewController.swift */; };
+		B866E0B229411B530094A1CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B866E0B029411B530094A1CC /* Main.storyboard */; };
+		B866E0B429411B540094A1CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B866E0B329411B540094A1CC /* Assets.xcassets */; };
+		B866E0B729411B540094A1CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B866E0B529411B540094A1CC /* LaunchScreen.storyboard */; };
+		B866E0C229411B540094A1CC /* pedidos_gasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B866E0C129411B540094A1CC /* pedidos_gasTests.swift */; };
+		B866E0CC29411B540094A1CC /* pedidos_gasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B866E0CB29411B540094A1CC /* pedidos_gasUITests.swift */; };
+		B866E0CE29411B540094A1CC /* pedidos_gasUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B866E0CD29411B540094A1CC /* pedidos_gasUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B866E0BE29411B540094A1CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B866E09F29411B530094A1CC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B866E0A629411B530094A1CC;
+			remoteInfo = "pedidos-gas";
+		};
+		B866E0C829411B540094A1CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B866E09F29411B530094A1CC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B866E0A629411B530094A1CC;
+			remoteInfo = "pedidos-gas";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B866E0A729411B530094A1CC /* pedidos-gas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pedidos-gas.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B866E0AA29411B530094A1CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B866E0AC29411B530094A1CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B866E0AE29411B530094A1CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B866E0B129411B530094A1CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B866E0B329411B540094A1CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B866E0B629411B540094A1CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B866E0B829411B540094A1CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B866E0BD29411B540094A1CC /* pedidos-gasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "pedidos-gasTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B866E0C129411B540094A1CC /* pedidos_gasTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pedidos_gasTests.swift; sourceTree = "<group>"; };
+		B866E0C729411B540094A1CC /* pedidos-gasUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "pedidos-gasUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B866E0CB29411B540094A1CC /* pedidos_gasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pedidos_gasUITests.swift; sourceTree = "<group>"; };
+		B866E0CD29411B540094A1CC /* pedidos_gasUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pedidos_gasUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B866E0A429411B530094A1CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B866E0BA29411B540094A1CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B866E0C429411B540094A1CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B866E09E29411B530094A1CC = {
+			isa = PBXGroup;
+			children = (
+				B866E0A929411B530094A1CC /* pedidos-gas */,
+				B866E0C029411B540094A1CC /* pedidos-gasTests */,
+				B866E0CA29411B540094A1CC /* pedidos-gasUITests */,
+				B866E0A829411B530094A1CC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B866E0A829411B530094A1CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B866E0A729411B530094A1CC /* pedidos-gas.app */,
+				B866E0BD29411B540094A1CC /* pedidos-gasTests.xctest */,
+				B866E0C729411B540094A1CC /* pedidos-gasUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B866E0A929411B530094A1CC /* pedidos-gas */ = {
+			isa = PBXGroup;
+			children = (
+				B866E0AA29411B530094A1CC /* AppDelegate.swift */,
+				B866E0AC29411B530094A1CC /* SceneDelegate.swift */,
+				B866E0AE29411B530094A1CC /* ViewController.swift */,
+				B866E0B029411B530094A1CC /* Main.storyboard */,
+				B866E0B329411B540094A1CC /* Assets.xcassets */,
+				B866E0B529411B540094A1CC /* LaunchScreen.storyboard */,
+				B866E0B829411B540094A1CC /* Info.plist */,
+			);
+			path = "pedidos-gas";
+			sourceTree = "<group>";
+		};
+		B866E0C029411B540094A1CC /* pedidos-gasTests */ = {
+			isa = PBXGroup;
+			children = (
+				B866E0C129411B540094A1CC /* pedidos_gasTests.swift */,
+			);
+			path = "pedidos-gasTests";
+			sourceTree = "<group>";
+		};
+		B866E0CA29411B540094A1CC /* pedidos-gasUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B866E0CB29411B540094A1CC /* pedidos_gasUITests.swift */,
+				B866E0CD29411B540094A1CC /* pedidos_gasUITestsLaunchTests.swift */,
+			);
+			path = "pedidos-gasUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B866E0A629411B530094A1CC /* pedidos-gas */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B866E0D129411B540094A1CC /* Build configuration list for PBXNativeTarget "pedidos-gas" */;
+			buildPhases = (
+				B866E0A329411B530094A1CC /* Sources */,
+				B866E0A429411B530094A1CC /* Frameworks */,
+				B866E0A529411B530094A1CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "pedidos-gas";
+			productName = "pedidos-gas";
+			productReference = B866E0A729411B530094A1CC /* pedidos-gas.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B866E0BC29411B540094A1CC /* pedidos-gasTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B866E0D429411B540094A1CC /* Build configuration list for PBXNativeTarget "pedidos-gasTests" */;
+			buildPhases = (
+				B866E0B929411B540094A1CC /* Sources */,
+				B866E0BA29411B540094A1CC /* Frameworks */,
+				B866E0BB29411B540094A1CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B866E0BF29411B540094A1CC /* PBXTargetDependency */,
+			);
+			name = "pedidos-gasTests";
+			productName = "pedidos-gasTests";
+			productReference = B866E0BD29411B540094A1CC /* pedidos-gasTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B866E0C629411B540094A1CC /* pedidos-gasUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B866E0D729411B540094A1CC /* Build configuration list for PBXNativeTarget "pedidos-gasUITests" */;
+			buildPhases = (
+				B866E0C329411B540094A1CC /* Sources */,
+				B866E0C429411B540094A1CC /* Frameworks */,
+				B866E0C529411B540094A1CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B866E0C929411B540094A1CC /* PBXTargetDependency */,
+			);
+			name = "pedidos-gasUITests";
+			productName = "pedidos-gasUITests";
+			productReference = B866E0C729411B540094A1CC /* pedidos-gasUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B866E09F29411B530094A1CC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					B866E0A629411B530094A1CC = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					B866E0BC29411B540094A1CC = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = B866E0A629411B530094A1CC;
+					};
+					B866E0C629411B540094A1CC = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = B866E0A629411B530094A1CC;
+					};
+				};
+			};
+			buildConfigurationList = B866E0A229411B530094A1CC /* Build configuration list for PBXProject "pedidos-gas" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B866E09E29411B530094A1CC;
+			productRefGroup = B866E0A829411B530094A1CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B866E0A629411B530094A1CC /* pedidos-gas */,
+				B866E0BC29411B540094A1CC /* pedidos-gasTests */,
+				B866E0C629411B540094A1CC /* pedidos-gasUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B866E0A529411B530094A1CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B866E0B729411B540094A1CC /* LaunchScreen.storyboard in Resources */,
+				B866E0B429411B540094A1CC /* Assets.xcassets in Resources */,
+				B866E0B229411B530094A1CC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B866E0BB29411B540094A1CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B866E0C529411B540094A1CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B866E0A329411B530094A1CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B866E0AF29411B530094A1CC /* ViewController.swift in Sources */,
+				B866E0AB29411B530094A1CC /* AppDelegate.swift in Sources */,
+				B866E0AD29411B530094A1CC /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B866E0B929411B540094A1CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B866E0C229411B540094A1CC /* pedidos_gasTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B866E0C329411B540094A1CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B866E0CC29411B540094A1CC /* pedidos_gasUITests.swift in Sources */,
+				B866E0CE29411B540094A1CC /* pedidos_gasUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B866E0BF29411B540094A1CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B866E0A629411B530094A1CC /* pedidos-gas */;
+			targetProxy = B866E0BE29411B540094A1CC /* PBXContainerItemProxy */;
+		};
+		B866E0C929411B540094A1CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B866E0A629411B530094A1CC /* pedidos-gas */;
+			targetProxy = B866E0C829411B540094A1CC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B866E0B029411B530094A1CC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B866E0B129411B530094A1CC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B866E0B529411B540094A1CC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B866E0B629411B540094A1CC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B866E0CF29411B540094A1CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B866E0D029411B540094A1CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B866E0D229411B540094A1CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "pedidos-gas/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Pedidos gas";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "na.pedidos-gas";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B866E0D329411B540094A1CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "pedidos-gas/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Pedidos gas";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "na.pedidos-gas";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B866E0D529411B540094A1CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "na.pedidos-gasTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pedidos-gas.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/pedidos-gas";
+			};
+			name = Debug;
+		};
+		B866E0D629411B540094A1CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "na.pedidos-gasTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pedidos-gas.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/pedidos-gas";
+			};
+			name = Release;
+		};
+		B866E0D829411B540094A1CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "na.pedidos-gasUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "pedidos-gas";
+			};
+			name = Debug;
+		};
+		B866E0D929411B540094A1CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "na.pedidos-gasUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "pedidos-gas";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B866E0A229411B530094A1CC /* Build configuration list for PBXProject "pedidos-gas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B866E0CF29411B540094A1CC /* Debug */,
+				B866E0D029411B540094A1CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B866E0D129411B540094A1CC /* Build configuration list for PBXNativeTarget "pedidos-gas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B866E0D229411B540094A1CC /* Debug */,
+				B866E0D329411B540094A1CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B866E0D429411B540094A1CC /* Build configuration list for PBXNativeTarget "pedidos-gasTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B866E0D529411B540094A1CC /* Debug */,
+				B866E0D629411B540094A1CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B866E0D729411B540094A1CC /* Build configuration list for PBXNativeTarget "pedidos-gasUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B866E0D829411B540094A1CC /* Debug */,
+				B866E0D929411B540094A1CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B866E09F29411B530094A1CC /* Project object */;
+}

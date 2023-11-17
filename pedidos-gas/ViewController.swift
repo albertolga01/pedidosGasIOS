@@ -8,17 +8,85 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler {
+    
+
+    
+    override func loadView() {
+        
+        var defTelefono = "defTelefono"
+        var defConsumidor = "consumidor"
+        var defNombres = "nombres"
+        var defApellidos = "apellidos"
+        var defEmail = "email"
+        var defIdentificador_externo = "idexterno"
+        
+        UserDefaults.standard.set(defTelefono, forKey:"defTelefono");
+        UserDefaults.standard.set(defConsumidor, forKey:"defConsumidor");
+        UserDefaults.standard.set(defNombres, forKey:"defNombres");
+        UserDefaults.standard.set(defApellidos, forKey:"defApellidos");
+        UserDefaults.standard.set(defEmail, forKey:"defEmail");
+        UserDefaults.standard.set(defIdentificador_externo, forKey:"defIdentificador_externo");
+        UserDefaults.standard.synchronize();
+        
+          let webConfiguration = WKWebViewConfiguration()
+          let contentController = WKUserContentController()
+          // Inject JavaScript which sending message to App
+          let js: String = "window.webkit.messageHandlers.callbackHandler.postMessage('Hello from JavaScript');"
+          let userScript = WKUserScript(source: js, injectionTime: WKUserScriptInjectionTime.atDocumentEnd, forMainFrameOnly: false)
+          contentController.removeAllUserScripts()
+          contentController.addUserScript(userScript)
+          // Add ScriptMessageHandler
+          contentController.add(
+              self,
+              name: "callbackHandler"
+          )
+
+          webConfiguration.userContentController = contentController
+
+          webView = WKWebView(frame: .zero, configuration: webConfiguration)
+          webView.uiDelegate = self
+          webView.navigationDelegate = self
+          view = webView
+      }
     @IBOutlet weak var webView: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let url = URL(string:"https://pedidosgas.grupopetromar.com")
+        let url = URL(string:"http://localhost:3000")
         let request = URLRequest(url: url!)
+        webView.navigationDelegate = self
         webView.load(request)
+         
     }
-
-
+   
+    func webView(_ webView: WKWebView,
+        didFinish navigation: WKNavigation!) {
+        print("loaded")
+        
+        let defTelefono = UserDefaults.standard.string(forKey: "defTelefono")
+        let defConsumidor = UserDefaults.standard.string(forKey: "defConsumidor")
+        let defNombres = UserDefaults.standard.string(forKey: "defNombres")
+        let defApellidos = UserDefaults.standard.string(forKey: "defApellidos")
+        let defEmail = UserDefaults.standard.string(forKey: "defEmail")
+        let defIdentificador_externo = UserDefaults.standard.string(forKey: "defIdentificador_externo")
+        
+        
+        print(defTelefono)
+        self.webView.evaluateJavaScript("test("+defTelefono+")") { result, error in
+                    guard error == nil else {
+                        print(error)
+                        return
+                    }
+                }
+      }
+    
+    // Implement `WKScriptMessageHandler`，handle message which been sent by JavaScript
+        func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+            if(message.name != "") {
+                print("JavaScript is sending a message \(message.body)")
+            }
+        }
 }
 

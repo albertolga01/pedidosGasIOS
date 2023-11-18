@@ -9,8 +9,33 @@ import UIKit
 import WebKit
 
 class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler {
+   /*
+    let JSON = """
+    {
+        "telefono":"47093",
+        "noConsumidor":"47093,
+        "nombres":"nombres",
+        "apellidos":"apellidos",
+        "email":"email",
+        "identificador_externo":"identificador_externo",
+        "loggeado":"1"
+    }
+    """
+*/
     
+    struct BlogPost: Decodable {
+        enum Category: String, Decodable {
+            case swift, combine, debugging, xcode
+        }
 
+        var defTelefono: Int
+        var defConsumidor: Int
+        var defNombres: String
+        var defApellidos: String
+        var defEmail: String
+        var defIdentificador_externo: String
+        var defLoggeado: Int
+    }
     
     override func loadView() {
         
@@ -32,7 +57,7 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
           let webConfiguration = WKWebViewConfiguration()
           let contentController = WKUserContentController()
           // Inject JavaScript which sending message to App
-          let js: String = "window.webkit.messageHandlers.callbackHandler.postMessage('Hello from JavaScript');"
+          let js: String = "window.webkit.messageHandlers.callbackHandler.postMessage();"
           let userScript = WKUserScript(source: js, injectionTime: WKUserScriptInjectionTime.atDocumentEnd, forMainFrameOnly: false)
           contentController.removeAllUserScripts()
           contentController.addUserScript(userScript)
@@ -65,26 +90,30 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
         didFinish navigation: WKNavigation!) {
         print("loaded")
         
-        let defTelefono = UserDefaults.standard.string(forKey: "defTelefono")
-        let defConsumidor = UserDefaults.standard.string(forKey: "defConsumidor")
-        let defNombres = UserDefaults.standard.string(forKey: "defNombres")
-        let defApellidos = UserDefaults.standard.string(forKey: "defApellidos")
-        let defEmail = UserDefaults.standard.string(forKey: "defEmail")
-        let defIdentificador_externo = UserDefaults.standard.string(forKey: "defIdentificador_externo")
+        
+        var defTelefono = UserDefaults.standard.string(forKey: "defTelefono") as! String
+        let defConsumidor = UserDefaults.standard.string(forKey: "defConsumidor") as! String
+        let defNombres = UserDefaults.standard.string(forKey: "defNombres") as! String
+        let defApellidos = UserDefaults.standard.string(forKey: "defApellidos") as! String
+        let defEmail = UserDefaults.standard.string(forKey: "defEmail") as! String
+        let defIdentificador_externo = UserDefaults.standard.string(forKey: "defIdentificador_externo") as! String
+        
+        
         
         
         print(defTelefono)
-        self.webView.evaluateJavaScript("test("+defTelefono+")") { result, error in
-                    guard error == nil else {
-                        print(error)
-                        return
-                    }
-                }
+        /*
+        self.webView.evaluateJavaScript("{window.reactFunction1('\(defTelefono)','\(defConsumidor)','\(defNombres)','\(defApellidos)','\(defEmail)','\(defIdentificador_externo)');}") { (any, error) in
+        print("Error : \(error)")
+        }*/
       }
     
     // Implement `WKScriptMessageHandler`，handle message which been sent by JavaScript
         func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
             if(message.name != "") {
+                //let jsonData = JSON.data(using: String.Encoding.utf8)!
+                //let blogPost: BlogPost = try! JSONDecoder().decode(BlogPost.self, from: jsonData)
+
                 print("JavaScript is sending a message \(message.body)")
             }
         }

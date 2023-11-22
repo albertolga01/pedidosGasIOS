@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
@@ -12,17 +12,14 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="pedidos_gas" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="pedidos_gas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ge4-z7-ZQU">
-                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Ge4-z7-ZQU" secondAttribute="height" multiplier="393:793" id="LjI-z1-KUz"/>
-                                </constraints>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ge4-z7-ZQU">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                                <color key="backgroundColor" red="0.36078431372549019" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
@@ -32,8 +29,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Ge4-z7-ZQU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dhZ-E5-3Df"/>
-                            <constraint firstAttribute="bottom" secondItem="Ge4-z7-ZQU" secondAttribute="bottom" id="tSl-47-0jB"/>
+                            <constraint firstItem="Ge4-z7-ZQU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-47" id="HNS-AW-5wD"/>
+                            <constraint firstItem="Ge4-z7-ZQU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Otr-ue-QPe"/>
+                            <constraint firstItem="Ge4-z7-ZQU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sqd-27-Je3"/>
+                            <constraint firstItem="Ge4-z7-ZQU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="m4R-kj-mPM"/>
                         </constraints>
                     </view>
                     <connections>
@@ -42,7 +41,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="46.261682242990652" y="-3.2397408207343417"/>
         </scene>
     </scenes>
     <resources>

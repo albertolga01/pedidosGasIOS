@@ -9,37 +9,7 @@ import UIKit
 import WebKit
 
 class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler, UIApplicationDelegate {
-   /*
-    let JSON = """nn
-    {
-        "telefono":"47093",
-        "noConsumidor":"47093,
-        "nombres":"nombres",
-        "apellidos":"apellidos",
-        "email":"email",
-        "identificador_externo":"identificador_externo",
-        "loggeado":"1"
-    }
-    """
-
-     
-    
-    struct BlogPost: Decodable {
-        enum Category: String, Decodable {
-            case swift, combine, debugging, xcode
-        }
-
-        var defTelefono: Int
-        var defConsumidor: Int
-        var defNombres: String
-        var defApellidos: String
-        var defEmail: String
-        var defIdentificador_externo: String
-        var defLoggeado: Int
-    }
-    
-    */
-       
+   
     struct Datos: Codable {
                       
                     let telefono: String?
@@ -55,10 +25,14 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
    
     
     override func loadView() {
-         
         
-          let webConfiguration = WKWebViewConfiguration()
-          let contentController = WKUserContentController()
+        
+        let webConfiguration = WKWebViewConfiguration()
+        let contentController = WKUserContentController()
+        
+        
+       
+        
           // Inject JavaScript which sending message to App
           let js: String = "window.webkit.messageHandlers.callbackHandler.postMessage();"
           let userScript = WKUserScript(source: js, injectionTime: WKUserScriptInjectionTime.atDocumentEnd, forMainFrameOnly: false)
@@ -69,6 +43,37 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
               self,
               name: "callbackHandler"
           )
+        
+        let js1: String = "window.webkit.messageHandlers.instagram.postMessage();"
+        let userScript1 = WKUserScript(source: js1, injectionTime: WKUserScriptInjectionTime.atDocumentEnd, forMainFrameOnly: false)
+        contentController.removeAllUserScripts()
+        contentController.addUserScript(userScript1)
+        // Add ScriptMessageHandler
+        contentController.add(
+            self,
+            name: "instagram"
+        )
+        
+        let js2: String = "window.webkit.messageHandlers.facebook.postMessage();"
+        let userScript2 = WKUserScript(source: js2, injectionTime: WKUserScriptInjectionTime.atDocumentEnd, forMainFrameOnly: false)
+        contentController.removeAllUserScripts()
+        contentController.addUserScript(userScript2)
+        // Add ScriptMessageHandler
+        contentController.add(
+            self,
+            name: "facebook"
+        )
+        
+        let js3: String = "window.webkit.messageHandlers.whatsapp.postMessage();"
+        let userScript3 = WKUserScript(source: js3, injectionTime: WKUserScriptInjectionTime.atDocumentEnd, forMainFrameOnly: false)
+        contentController.removeAllUserScripts()
+        contentController.addUserScript(userScript3)
+        // Add ScriptMessageHandler
+        contentController.add(
+            self,
+            name: "whatsapp"
+        )
+         
 
           webConfiguration.userContentController = contentController
 
@@ -77,7 +82,14 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
           webView.navigationDelegate = self
         
           view = webView
+        
+        webView.frame = CGRect(x: 0, y: self.view.frame.size.height/2, width: self.view.frame.size.width, height: self.view.frame.size.height/2)
+        
+        webView.scrollView.contentInsetAdjustmentBehavior = .automatic //never
+
       }
+    
+    
     @IBOutlet weak var webView: WKWebView!
     
     override func viewDidLoad() {
@@ -86,14 +98,18 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
        
         
         self.reloadView()
+        self.modalPresentationStyle = .fullScreen
         
         NotificationCenter.default.addObserver(self, selector: #selector(onResume), name:
                 UIApplication.willEnterForegroundNotification, object: nil)
     }
     
+    
+    
     func reloadView() {
         //do your initalisations here
-        let url = URL(string:"http://localhost:3000")
+        //let url = URL(string:"http://localhost:3000")
+        let url = URL(string:"https://petromargas.com")
         let request = URLRequest(url: url!)
         webView.navigationDelegate = self
         webView.load(request)
@@ -143,7 +159,7 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
     
     // Implement `WKScriptMessageHandler`，handle message which been sent by JavaScript
         func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-            if(message.name != "") {
+            if(message.name == "callbackHandler") {
                 
                             print("JavaScript is sending a message \(message.body)")
                 
@@ -176,9 +192,46 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
                                 UserDefaults.standard.removeObject(forKey: "defIdentificador_externo")
                                 
                             }
+                
+                
                             
                  
             }
+            
+            
+            if(message.name == "instagram") {
+                            let Username =  "grupopetromar" // Your Instagram Username here
+                                let appURL = URL(string: "instagram://user?username=\(Username)")!
+                                let application = UIApplication.shared
+
+                                if application.canOpenURL(appURL) {
+                                    application.open(appURL)
+                                } else {
+                                    // if Instagram app is not installed, open URL inside Safari
+                                    let webURL = URL(string: "https://instagram.com/\(Username)")!
+                                    application.open(webURL)
+                                }
+                        }
+            
+            if(message.name == "facebook") {
+                            let Username =  "grupopetromar" // Your Instagram Username here
+                                let appURL = URL(string: "facebook://user?username=\(Username)")!
+                                let application = UIApplication.shared
+
+                                if application.canOpenURL(appURL) {
+                                    application.open(appURL)
+                                } else {
+                                    // if Instagram app is not installed, open URL inside Safari
+                                    let webURL = URL(string: "https://facebook.com/\(Username)")!
+                                    application.open(webURL)
+                                }
+                        }
+            
+            if(message.name == "whatsapp") {
+                UIApplication.shared.openURL(URL(string:"https://api.whatsapp.com/send?phone=526699933030")!)
+
+            }
+            
         }
     
     
@@ -192,5 +245,30 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
                 alert.dismiss(animated: true)
             }
         }
+    
+    /*
+    public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+            
+            guard let url = navigationAction.request.url else{
+                decisionHandler(.allow)
+                return
+            }
+            
+            let urlString = url.absoluteString.lowercased()
+            if urlString.starts(with: "http://www.instagram.com/grupopetromar/") || urlString.starts(with: "https://www.instagram.com/grupopetromar/") {
+                decisionHandler(.cancel)
+                UIApplication.shared.open(url, options: [:])
+            } else {
+                decisionHandler(.allow)
+            }
+            
+        }
+     */
+    class FullScreenWKWebView: WKWebView {
+        override var safeAreaInsets: UIEdgeInsets {
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        }
+    }
+    
 }
 

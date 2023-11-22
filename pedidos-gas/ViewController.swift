@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler {
+class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler, UIApplicationDelegate {
    /*
     let JSON = """nn
     {
@@ -55,15 +55,7 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
    
     
     override func loadView() {
-        
-        var defTelefono = "defTelefono"
-        var defConsumidor = "consumidor"
-        var defNombres = "nombres"
-        var defApellidos = "apellidos"
-        var defEmail = "email"
-        var defIdentificador_externo = "idexterno"
-        
-      
+         
         
           let webConfiguration = WKWebViewConfiguration()
           let contentController = WKUserContentController()
@@ -83,6 +75,7 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
           webView = WKWebView(frame: .zero, configuration: webConfiguration)
           webView.uiDelegate = self
           webView.navigationDelegate = self
+        
           view = webView
       }
     @IBOutlet weak var webView: WKWebView!
@@ -93,6 +86,9 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
        
         
         self.reloadView()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(onResume), name:
+                UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     func reloadView() {
@@ -101,6 +97,12 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
         let request = URLRequest(url: url!)
         webView.navigationDelegate = self
         webView.load(request)
+    }
+    
+    
+    @objc func onResume() {
+        
+         
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -114,17 +116,18 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
     
     func webView(_ webView: WKWebView,
         didFinish navigation: WKNavigation!) {
-        print("loaded")
         
-        if let favExist = UserDefaults.standard.array(forKey: "defTelefono") {
-                
-            var defTelefono = UserDefaults.standard.string(forKey: "defTelefono") as! String
-            let defConsumidor = UserDefaults.standard.string(forKey: "defConsumidor") as! String
-            let defNombres = UserDefaults.standard.string(forKey: "defNombres") as! String
-            let defApellidos = UserDefaults.standard.string(forKey: "defApellidos") as! String
-            let defEmail = UserDefaults.standard.string(forKey: "defEmail") as! String
-            let defIdentificador_externo = UserDefaults.standard.string(forKey: "defIdentificador_externo") as! String
+         
+        
+        if UserDefaults.standard.string(forKey: "defTelefono") != nil {
             
+            var defTelefono = UserDefaults.standard.string(forKey: "defTelefono") as! String
+            var defConsumidor = UserDefaults.standard.string(forKey: "defConsumidor") as! String
+            var defNombres = UserDefaults.standard.string(forKey: "defNombres") as! String
+            var defApellidos = UserDefaults.standard.string(forKey: "defApellidos") as! String
+            var defEmail = UserDefaults.standard.string(forKey: "defEmail") as! String
+            var defIdentificador_externo = UserDefaults.standard.string(forKey: "defIdentificador_externo") as! String
+            self.showToast(message: "Updating..." + defTelefono, seconds: 1.0)
             self.webView.evaluateJavaScript("{window.reactFunction1('\(defTelefono)','\(defConsumidor)','\(defNombres)','\(defApellidos)','\(defEmail)','\(defIdentificador_externo)');}") { (any, error) in
             print("Error : \(error)")
             }
@@ -175,6 +178,18 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
                             }
                             
                  
+            }
+        }
+    
+    
+    func showToast(message : String, seconds: Double){
+            let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+            alert.view.backgroundColor = .black
+            alert.view.alpha = 0.5
+            alert.view.layer.cornerRadius = 15
+            self.present(alert, animated: true)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + seconds) {
+                alert.dismiss(animated: true)
             }
         }
 }

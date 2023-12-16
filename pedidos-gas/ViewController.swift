@@ -110,6 +110,7 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
         //do your initalisations here
         //let url = URL(string:"http://localhost:3000")
         let url = URL(string:"https://petromargas.com")
+        //let url = URL(string:"https://test.petromargas.com")
         let request = URLRequest(url: url!)
         webView.navigationDelegate = self
         webView.load(request)

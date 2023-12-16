@@ -11,9 +11,17 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
-
+   
+    
+    //func UIApplication.shared.statusBarStyle = .lightContent
+    
+    /*func application(_application: UIApplication) -> UIStatusBarStyle{
+        return .darkContent
+    }
+    */
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Override point for customization after application launch. 
         return true
     }
 

@@ -10,6 +10,8 @@ import WebKit
 
 class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler, UIApplicationDelegate {
    
+    
+    
     struct Datos: Codable {
                       
                     let telefono: String?
@@ -25,7 +27,6 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
    
     
     override func loadView() {
-        
         
         let webConfiguration = WKWebViewConfiguration()
         let contentController = WKUserContentController()
@@ -93,9 +94,14 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
     @IBOutlet weak var webView: WKWebView!
     
     override func viewDidLoad() {
+        
+        //view.insetsLayoutMarginsFromSafeArea = false
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-       
+        navigationController?.navigationBar.overrideUserInterfaceStyle = .dark
+        
+        
         
         self.reloadView()
         self.modalPresentationStyle = .fullScreen
@@ -105,12 +111,18 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
     }
     
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .darkContent
+    }
+    
+   
+    
     
     func reloadView() {
         //do your initalisations here
         //let url = URL(string:"http://localhost:3000")
+        //let url = URL(string:"https://petromargas.com")
         let url = URL(string:"https://petromargas.com")
-        //let url = URL(string:"https://test.petromargas.com")
         let request = URLRequest(url: url!)
         webView.navigationDelegate = self
         webView.load(request)
@@ -144,7 +156,7 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKSc
             var defApellidos = UserDefaults.standard.string(forKey: "defApellidos") as! String
             var defEmail = UserDefaults.standard.string(forKey: "defEmail") as! String
             var defIdentificador_externo = UserDefaults.standard.string(forKey: "defIdentificador_externo") as! String
-            self.showToast(message: "Updating..." + defTelefono, seconds: 1.0)
+            self.showToast(message: "Iniciando sesión..." , seconds: 1.0)
             self.webView.evaluateJavaScript("{window.reactFunction1('\(defTelefono)','\(defConsumidor)','\(defNombres)','\(defApellidos)','\(defEmail)','\(defIdentificador_externo)');}") { (any, error) in
             print("Error : \(error)")
             }
